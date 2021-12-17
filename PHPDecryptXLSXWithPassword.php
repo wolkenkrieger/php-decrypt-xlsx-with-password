@@ -1,26 +1,15 @@
 <?php declare(strict_types=1);
 
-namespace wolkenkrieger\PHPDecryptXLSXWithPassword;
+namespace wolkenkrieger\DecryptXLSX;
 
 require_once(__DIR__.'/lib/OLE.php');
 
 class PHPDecryptXLSXWithPassword {
 	/**
-	 * @param $oleObj
-	 * @param $name
-	 * @return false|mixed
+	 *
 	 */
-	private function getDataByName($oleObj, $name) {
-		$objArray = array_filter($oleObj -> _list, function($obj) use ($name) {
-			return $name === $obj -> Name;
-		});
-		
-		if(0 === count($objArray))
-		{
-			return false;
-		}
-		
-		return $oleObj -> getData(array_values($objArray)[0] -> No, 0, -1);
+	public function __construct() {
+	
 	}
 	
 	/**
@@ -116,5 +105,23 @@ class PHPDecryptXLSXWithPassword {
 		
 		// write to file
 		file_put_contents($decryptedFilePath, $decrypted);
+	}
+	
+	/**
+	 * @param $oleObj
+	 * @param $name
+	 * @return false|mixed
+	 */
+	private function getDataByName($oleObj, $name) {
+		$objArray = array_filter($oleObj -> _list, function($obj) use ($name) {
+			return $name === $obj -> Name;
+		});
+		
+		if(0 === count($objArray))
+		{
+			return false;
+		}
+		
+		return $oleObj -> getData(array_values($objArray)[0] -> No, 0, -1);
 	}
 }
