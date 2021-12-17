@@ -1,3 +1,9 @@
 {
-  "name": "wolkenkrieger/php-decrypt-xlsx-with-password"
+  "name": "wolkenkrieger/php-decrypt-xlsx-with-password",
+  "homepage": "",
+  "require": {
+    "php": ">=7.4",
+    "ext-simplexml": "*",
+    "ext-openssl": "*"
+  }
 }
