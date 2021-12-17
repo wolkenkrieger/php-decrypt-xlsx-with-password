@@ -2,7 +2,7 @@
 
 namespace wolkenkrieger\DecryptXLSX;
 
-require_once(__DIR__.'/lib/OLE.php');
+include_once __DIR__ . '/lib/OLE.php';
 
 class PHPDecryptXLSXWithPassword {
 	/**
